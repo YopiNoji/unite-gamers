@@ -1,8 +1,9 @@
 import { verifyIdToken } from '../../utils/auth/firebaseAdmin'
 const favoriteFoods = ['pizza', 'burger', 'chips', 'tortilla']
+import { NextApiRequest, NextApiResponse } from 'next'
 
-const getFood = async (req, res) => {
-  const token = req.headers.token
+const getFood = async (_req: NextApiRequest, res: NextApiResponse) => {
+  const token = _req.headers.token
 
   try {
     await verifyIdToken(token)
