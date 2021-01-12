@@ -13,7 +13,7 @@ import { mapUserData } from './mapUserData'
 initFirebase()
 
 const useUser = () => {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(new Object)
   const router = useRouter()
 
   const logout = async () => {
@@ -42,7 +42,7 @@ const useUser = () => {
           setUser(userData)
         } else {
           removeUserCookie()
-          setUser()
+          setUser(new Object)
         }
       })
 
