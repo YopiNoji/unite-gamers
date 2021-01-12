@@ -22,9 +22,11 @@ const firebaseAuthConfig: Props["uiConfig"] = {
   signInSuccessUrl: '/',
   credentialHelper: 'none',
   callbacks: {
-    signInSuccessWithAuthResult: async (authResult, redirectUrl) => {
-      const userData = await mapUserData(authResult.user)
-      setUserCookie(userData)
+    signInSuccessWithAuthResult: (authResult, redirectUrl) => {
+      const userData = mapUserData(authResult.user)
+      Promise.all([userData]).then(()=>{
+        setUserCookie(userData)
+      })
       return true
     },
   },
