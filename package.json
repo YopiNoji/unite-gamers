@@ -14,7 +14,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-firebaseui": "4.1.0",
-    "swr": "0.4.1"
+    "swr": "0.4.2"
   },
   "license": "MIT",
   "devDependencies": {
